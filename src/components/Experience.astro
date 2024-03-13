@@ -1,0 +1,30 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCE = [
+  {
+    date: "Now...",
+    title: "Front-end developer",
+    description:
+      "Focused on the development of web applications with React, Astro and Tailwind CSS. Diving deep into the world of frontend development, eager to learn and grow. Passionate about crafting engaging digital experiences while honing new skills.",
+    link: "",
+  },
+  {
+    date: "Mayo 2018 - 2023",
+    title: "Graphic Designer",
+    description:
+      "Proficient in Adobe Creative Suite and well-versed in both print and digital mediums, I specialize in crafting compelling brand identities, user interfaces and marketing materials.",
+    link: "",
+  },
+];
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-700 ml-2">
+  {
+    EXPERIENCE.map((content) => (
+      <li class="mb-10 ms-4">
+        <ExperienceItem {...content} />
+      </li>
+    ))
+  }
+</ol>
