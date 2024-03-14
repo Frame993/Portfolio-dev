@@ -4,6 +4,10 @@ import React from "../components/icons/React.astro";
 import TypeScript from "../components/icons/TypeScript.astro";
 import SocialPill from "./icons/SocialPill.astro";
 import GithubIcon from "../components/icons/Github.astro";
+import Javascript from "../components/icons/Javascript.astro";
+import Html from "../components/icons/Html.astro";
+import CSS from "../components/icons/CSS.astro";
+import AstroIcon from "./icons/AstroIcon.astro";
 
 const TAGS = {
   TAILWIND: {
@@ -21,26 +25,55 @@ const TAGS = {
     class: "border border-white/10 bg-white/5",
     icon: TypeScript,
   },
+  JAVASCRIPT: {
+    name: "",
+    class: "border border-white/10 bg-white/5",
+    icon: Javascript,
+  },
+  HTML: {
+    name: "",
+    class: "border border-white/10 bg-white/5",
+    icon: Html,
+  },
+  CSS: {
+    name: "",
+    class: "border border-white/10 bg-white/5",
+    icon: CSS,
+  },
+  ASTRO: {
+    name: "",
+    class: "border border-white/10 bg-white/5",
+    icon: AstroIcon,
+  },
 };
 
 const PROJECTS = [
   {
+    title: "01 _ City Weather Tracker",
+    description:
+      "A weather app with Html, Javascript and CSS. The app fetches weather data from an API and displays the current weather conditions, including temperature, humidity, and wind speed.",
+    link: "https://frame993.github.io/Weather-app/",
+    github: "https://github.com/Frame993/Weather-app",
+    image: "/projects/weather.webp",
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
+  },
+  {
     title: "01 _ Coffee Listing",
     description:
       "Creating a section of the website with React and Tailwind CSS for a coffee listing interface. Use React to render the fetched coffee listings dynamically. Each listing should display key information about the coffee, such as its name, description, and price.",
-    link: "https://frame993.github.io/Simple-Coffee-Listing/",
-    github: "https://github.com/Frame993/Simple-Coffee-Listing",
+    link: "https://frame993.github.io/Weather-app/",
+    github: "https://github.com/Frame993/Weather-app",
     image: "/projects/Coffee_Listing.webp",
-    tags: [TAGS.TAILWIND, TAGS.REACT, TAGS.TYPESCRIPT],
+    tags: [TAGS.REACT, TAGS.TYPESCRIPT, TAGS.TAILWIND],
   },
   {
-    title: "02 _ Coffee Listing",
+    title: "01 _ Portfolio.dev",
     description:
-      "Creating a section of the website with React and Tailwind CSS for a coffee listing interface. Use React to render the fetched coffee listings dynamically. Each listing should display key information about the coffee, such as its name, description, and price.",
-    link: "https://frame993.github.io/Simple-Coffee-Listing/",
-    github: "https://github.com/Frame993/Simple-Coffee-Listing",
-    image: "/projects/Coffee_Listing.webp",
-    tags: [TAGS.TAILWIND, TAGS.REACT, TAGS.TYPESCRIPT],
+      "Beautiful and responsive portfolio website with Astro, Tailwind CSS, and JavaScript. The site features a dark mode toggle, a contact form, and a smooth scrolling effect.",
+    link: "https://yordandev.netlify.app/",
+    github: "https://github.com/Frame993/Portfolio-dev",
+    image: "/projects/portfolio_dev.webp",
+    tags: [TAGS.ASTRO, TAGS.JAVASCRIPT, TAGS.TAILWIND],
   },
 ];
 ---
@@ -50,11 +83,13 @@ const PROJECTS = [
     <article class="mb-24">
       <h3 class="text-lg font-semibold text-white">{title}</h3>
       <a href={link} target="_blank" rel="noopener noreferrer">
-        <img
-          class="w-full rounded-lg py-8"
-          src={image}
-          alt={`Screenshot of ${image}`}
-        />
+        <div class="rounded-lg my-6 w-full overflow-hidden">
+          <img
+            class="hover:scale-105 transition-all duration-300"
+            src={image}
+            alt={`Screenshot of ${image}`}
+          />
+        </div>
       </a>
       <p class="mb-4 text-base font-thin text-gray-200 text-pretty">
         {description}
