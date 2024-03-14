@@ -2,16 +2,86 @@
 import profile_img from "../assets/profile_img.jpg";
 ---
 
+<script>
+  const HamburgerIcon = document.getElementById("menu-toggle");
+  const menu = document.getElementById("menu");
+  const NavBar = document.getElementById("headerNavbar");
+
+  window.addEventListener('scroll', () => {
+   if (window.scrollY > 0) {
+     NavBar?.classList.add("bg-white/5");
+   } else {
+     NavBar?.classList.remove("bg-white/5");
+   }
+  });
+
+  document.addEventListener("click", (e: any) => {
+    if (menu && !HamburgerIcon?.contains(e.target)) {
+      closeMenu();
+    }
+  });
+
+  function closeMenu() {
+    menu?.classList.add("hidden");
+  }
+
+  function toggleMenu() {
+    menu?.classList.toggle("hidden");
+  }
+
+  HamburgerIcon?.addEventListener("click", () => {
+    toggleMenu();
+  });
+</script>
+
 <header
-  class="flex justify-between items-center w-full xl:w-[740px] mx-auto py-4"
+  id="headerNavbar"
+  class="flex justify-between md:items-center w-[90%] xl:w-[740px] mx-auto p-2 mt-4 rounded-full sticky top-[12px] z-10 backdrop-blur-lg transition-all"
 >
   <img
-    class="size-10 rounded-full"
+    class="size-12 rounded-full"
     src=`${profile_img.src}`
     alt="yordan photo"
   />
+  <nav class="flex-row gap-x-3 md:gap-x-10 text-gray-200 hidden md:flex pr-4">
+    <a class="hover:text-green-400 transition-all hover:translate-y-[-4px]" href="#top">Home</a>
+    <a class="hover:text-green-400 transition-all hover:translate-y-[-4px]" href="#about">About</a>
+    <a class="hover:text-green-400 transition-all hover:translate-y-[-4px]" href="#experience"
+      >Experience</a
+    >
+    <a class="hover:text-green-400 transition-all hover:translate-y-[-4px]" href="#projects">Projects</a>
+    <a class="hover:text-green-400 transition-all hover:translate-y-[-4px]" href="#contact">Contact</a>
+  </nav>
+  <!-- mobile version -->
 
-  <nav class="flex flex-row gap-x-3 md:gap-x-10 text-gray-200">
+  <button
+    id="menu-toggle"
+    class="md:hidden border border-white/10 rounded-full p-3
+    backdrop-blur-lg
+    text-gray-400
+    bg-white/5
+    hover:scale-110 hover:bg-white/10
+    transition-all duration-200"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="white"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="icon icon-tabler icons-tabler-outline icon-tabler-menu"
+      ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+        d="M4 8l16 0"></path><path d="M4 16l16 0"></path></svg
+    >
+  </button>
+  <nav
+    id="menu"
+    class="flex hidden flex-col gap-y-3 items-end absolute top-[80px] right-0 text-gray-200 md:hidden w-[60%] p-4 border border-white/10 rounded-lg backdrop-blur-lg bg-white/5"
+  >
     <a class="hover:text-green-400 transition-all" href="#top">Home</a>
     <a class="hover:text-green-400 transition-all" href="#about">About</a>
     <a class="hover:text-green-400 transition-all" href="#experience"
