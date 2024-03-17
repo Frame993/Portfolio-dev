@@ -1,0 +1,75 @@
+---
+import Tailwind from "../components/icons/Tailwind.astro";
+import React from "../components/icons/React.astro";
+import TypeScript from "../components/icons/TypeScript.astro";
+import Javascript from "../components/icons/Javascript.astro";
+import Html from "../components/icons/Html.astro";
+import CSS from "../components/icons/CSS.astro";
+import AstroIcon from "./icons/AstroIcon.astro";
+
+const icons = [
+  {
+    HTML: {
+      class: "size-10 md:size-16 grayscale opacity-80",
+      icon: Html,
+    },
+    CSS: {
+      class: "size-10 md:size-16 grayscale opacity-80",
+      icon: CSS,
+    },
+    JAVASCRIPT: {
+      class: "size-10 md:size-16 grayscale opacity-80",
+      icon: Javascript,
+    },
+    TAILWIND: {
+      class: "size-10 md:size-16 grayscale opacity-80",
+      icon: Tailwind,
+    },
+    TYPESCRIPT: {
+      class: "size-10 md:size-16 grayscale opacity-80",
+      icon: TypeScript,
+    },
+    ASTRO: {
+      class: "size-10 md:size-16 grayscale opacity-80",
+      icon: AstroIcon,
+    },
+    REACT: {
+      class: "size-10 md:size-16 grayscale opacity-80",
+      icon: React,
+    },
+  },
+];
+---
+
+<div class="flex flex-row gap-x-12 md:gap-x-16 grayscale">
+  <div id="icons-list" class="flex gap-x-12 md:gap-x-16 grayscale opacity-80 animate-loop-scroll">
+    {
+      icons.map(({ HTML, CSS, JAVASCRIPT, TAILWIND, TYPESCRIPT, ASTRO, REACT } ) => {
+        return (
+           <HTML.icon class={HTML.class} />
+           <CSS.icon class={CSS.class} />
+           <JAVASCRIPT.icon class={JAVASCRIPT.class} />
+           <TAILWIND.icon class={TAILWIND.class} />
+           <TYPESCRIPT.icon class={TYPESCRIPT.class} />
+           <ASTRO.icon class={ASTRO.class} />
+           <REACT.icon class={REACT.class} />
+        )
+      })
+    }
+  </div>
+  <div id="icons-list" class="flex gap-x-12 md:gap-x-16 grayscale opacity-80 animate-loop-scroll">
+    {
+      icons.map(({ HTML, CSS, JAVASCRIPT, TAILWIND, TYPESCRIPT, ASTRO, REACT } ) => {
+        return (
+           <HTML.icon class={HTML.class} />
+           <CSS.icon class={CSS.class} />
+           <JAVASCRIPT.icon class={JAVASCRIPT.class} />
+           <TAILWIND.icon class={TAILWIND.class} />
+           <TYPESCRIPT.icon class={TYPESCRIPT.class} />
+           <ASTRO.icon class={ASTRO.class} />
+           <REACT.icon class={REACT.class} />
+        )
+      })
+    }
+  </div>
+</div>
