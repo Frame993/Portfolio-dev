@@ -58,13 +58,13 @@ const PROJECTS = [
     tags: [TAGS.ASTRO, TAGS.TAILWIND, TAGS.TYPESCRIPT],
   },
   {
-    title: "City Weather Tracker",
+    title: "Utrailers",
     description:
-      "A weather app with Html, Javascript and CSS. The app fetches weather data from an API and displays the current weather conditions, including temperature, humidity, and wind speed.",
-    link: "https://frame993.github.io/Weather-app/",
-    github: "https://github.com/Frame993/Weather-app",
-    image: "/projects/weather.webp",
-    tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
+      "Utrailers is a web app that allows users to search for any movie or series on TMDB, Is an experimental project to practice React, Tailwind and TypeScript.",
+    link: "https://utrailers.netlify.app/",
+    github: "https://github.com/Frame993/UTrailers",
+    image: "/projects/utrailers.webp",
+    tags: [TAGS.REACT, TAGS.CSS, TAGS.TAILWIND, TAGS.TYPESCRIPT],
   },
   {
     title: "Rest Countries API",
@@ -74,6 +74,15 @@ const PROJECTS = [
     github: "https://github.com/Frame993/rest-countries-api-with-REACT",
     image: "/projects/countries.webp",
     tags: [TAGS.REACT, TAGS.TYPESCRIPT, TAGS.TAILWIND],
+  },
+  {
+    title: "Portfolio.dev",
+    description:
+      "Beautiful and responsive portfolio website with Astro, Tailwind CSS, and JavaScript. The site features a dark mode toggle, a contact form and a smooth scrolling effect.",
+    link: "https://yordandev.netlify.app/",
+    github: "https://github.com/Frame993/Portfolio-dev",
+    image: "/projects/portfolio_dev.webp",
+    tags: [TAGS.ASTRO, TAGS.JAVASCRIPT, TAGS.TAILWIND],
   },
   {
     title: "Coffee Listing",
@@ -94,19 +103,19 @@ const PROJECTS = [
     tags: [TAGS.REACT, TAGS.TYPESCRIPT, TAGS.TAILWIND],
   },
   {
-    title: "Portfolio.dev",
+    title: "City Weather Tracker",
     description:
-      "Beautiful and responsive portfolio website with Astro, Tailwind CSS, and JavaScript. The site features a dark mode toggle, a contact form and a smooth scrolling effect.",
-    link: "https://yordandev.netlify.app/",
-    github: "https://github.com/Frame993/Portfolio-dev",
-    image: "/projects/portfolio_dev.webp",
-    tags: [TAGS.ASTRO, TAGS.JAVASCRIPT, TAGS.TAILWIND],
+      "A weather app with Html, Javascript and CSS. The app fetches weather data from an API and displays the current weather conditions, including temperature, humidity, and wind speed.",
+    link: "https://frame993.github.io/Weather-app/",
+    github: "https://github.com/Frame993/Weather-app",
+    image: "/projects/weather.webp",
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
   },
 ];
 ---
 
 {
-  PROJECTS.map(({ title, description, image, tags, link, github }) => (
+  PROJECTS.slice(0,4).map(({ title, description, image, tags, link, github }) => (
     <article class="mb-24">
       <h3 class="text-lg font-semibold text-white">{title}</h3>
       <a href={link} target="_blank" rel="noopener noreferrer">
