@@ -8,6 +8,7 @@ import Javascript from "../components/icons/Javascript.astro";
 import Html from "../components/icons/Html.astro";
 import CSS from "../components/icons/CSS.astro";
 import AstroIcon from "./icons/AstroIcon.astro";
+import Next from "./icons/Next.astro";
 
 const TAGS = {
   TAILWIND: {
@@ -44,10 +45,24 @@ const TAGS = {
     name: "",
     class: "border border-white/10 bg-white/5",
     icon: AstroIcon,
+  }, 
+  NEXTJS: {
+    name: "",
+    class: "border border-white/10 bg-white/5",
+    icon: Next,
   },
 };
 
 const PROJECTS = [
+{
+    title: "PUBG Tracker",
+    description:
+      "Personal project develop in NextJS, Tailwind and TypeScript. It allows you to search for any PUBG player and see their stats.",
+    link: "https://clan-g.netlify.app/",
+    github: "https://github.com/Frame993/CLANG",
+    image: "/projects/clang.webp",
+    tags: [TAGS.NEXTJS, TAGS.TYPESCRIPT, TAGS.TAILWIND],
+  },
   {
     title: "Ai Lab Landing",
     description:
@@ -64,16 +79,7 @@ const PROJECTS = [
     link: "https://utrailers.netlify.app/",
     github: "https://github.com/Frame993/UTrailers",
     image: "/projects/utrailers.webp",
-    tags: [TAGS.REACT, TAGS.CSS, TAGS.TAILWIND, TAGS.TYPESCRIPT],
-  },
-  {
-    title: "Rest Countries API",
-    description:
-      "The app fetches data from an API and displays the list of countries. The user can filter the list by name or region. The site also features a dark mode toggle and save user preferences in local storage.",
-    link: "https://countriesandflags.netlify.app/",
-    github: "https://github.com/Frame993/rest-countries-api-with-REACT",
-    image: "/projects/countries.webp",
-    tags: [TAGS.REACT, TAGS.TYPESCRIPT, TAGS.TAILWIND],
+    tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.TYPESCRIPT],
   },
   {
     title: "Portfolio.dev",
@@ -110,6 +116,15 @@ const PROJECTS = [
     github: "https://github.com/Frame993/Weather-app",
     image: "/projects/weather.webp",
     tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
+  },
+  {
+    title: "Rest Countries API",
+    description:
+      "The app fetches data from an API and displays the list of countries. The user can filter the list by name or region. The site also features a dark mode toggle and save user preferences in local storage.",
+    link: "https://countriesandflags.netlify.app/",
+    github: "https://github.com/Frame993/rest-countries-api-with-REACT",
+    image: "/projects/countries.webp",
+    tags: [TAGS.REACT, TAGS.TYPESCRIPT, TAGS.TAILWIND],
   },
 ];
 ---
