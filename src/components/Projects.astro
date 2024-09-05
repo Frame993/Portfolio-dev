@@ -45,7 +45,7 @@ const TAGS = {
     name: "",
     class: "border border-white/10 bg-white/5",
     icon: AstroIcon,
-  }, 
+  },
   NEXTJS: {
     name: "",
     class: "border border-white/10 bg-white/5",
@@ -54,7 +54,7 @@ const TAGS = {
 };
 
 const PROJECTS = [
-{
+  {
     title: "PUBG Tracker",
     description:
       "Personal project develop in NextJS, Tailwind and TypeScript. It allows you to search for any PUBG player and see their stats.",
@@ -80,6 +80,15 @@ const PROJECTS = [
     github: "https://github.com/Frame993/UTrailers",
     image: "/projects/utrailers.webp",
     tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.TYPESCRIPT],
+  },
+  {
+    title: "Expro Landing",
+    description:
+      "Beautiful and responsive Landing page developed with Astro, Tailwind CSS, and TypeScript. The site integrates i18n and smooth scrolling effects with animations and transitions using InterceptionObserver API.",
+    link: "https://exproad.netlify.app/",
+    github: "https://github.com/Frame993/expro",
+    image: "/projects/Expro.png",
+    tags: [TAGS.ASTRO, TAGS.TYPESCRIPT, TAGS.TAILWIND],
   },
   {
     title: "Portfolio.dev",
@@ -130,39 +139,41 @@ const PROJECTS = [
 ---
 
 {
-  PROJECTS.slice(0,4).map(({ title, description, image, tags, link, github }) => (
-    <article class="mb-24">
-      <h3 class="text-lg font-semibold text-white">{title}</h3>
-      <a href={link} target="_blank" rel="noopener noreferrer">
-        <div class="rounded-lg my-6 w-full overflow-hidden">
-          <img
-            class="hover:scale-105 transition-all duration-300"
-            src={image}
-            alt={`Screenshot of ${image}`}
-          />
+  PROJECTS.slice(0, 4).map(
+    ({ title, description, image, tags, link, github }) => (
+      <article class="mb-24">
+        <h3 class="text-lg font-semibold text-white">{title}</h3>
+        <a href={link} target="_blank" rel="noopener noreferrer">
+          <div class="rounded-lg my-6 w-full overflow-hidden">
+            <img
+              class="hover:scale-105 transition-all duration-300"
+              src={image}
+              alt={`Screenshot of ${image}`}
+            />
+          </div>
+        </a>
+        <p class="mb-4 text-base font-thin text-gray-200 text-pretty">
+          {description}
+        </p>
+        <div class="flex items-center justify-between mb-6 gap-2">
+          <ul class="flex gap-2 flex-row flex-wrap">
+            {tags.map((tag) => (
+              <li>
+                <span
+                  class={`flex items-center text-xs gap-x-1 py-3 px-3 rounded-full ${tag.class}`}
+                >
+                  <tag.icon class="size-4" />
+                  {tag.name}
+                </span>
+              </li>
+            ))}
+          </ul>
+          <SocialPill href={github}>
+            <GithubIcon class="size-4 scale-70" />
+            Repository
+          </SocialPill>
         </div>
-      </a>
-      <p class="mb-4 text-base font-thin text-gray-200 text-pretty">
-        {description}
-      </p>
-      <div class="flex items-center justify-between mb-6 gap-2">
-        <ul class="flex gap-2 flex-row flex-wrap">
-          {tags.map((tag) => (
-            <li>
-              <span
-                class={`flex items-center text-xs gap-x-1 py-3 px-3 rounded-full ${tag.class}`}
-              >
-                <tag.icon class="size-4" />
-                {tag.name}
-              </span>
-            </li>
-          ))}
-        </ul>
-        <SocialPill href={github}>
-          <GithubIcon class="size-4 scale-70" />
-          Repository
-        </SocialPill>
-      </div>
-    </article>
-  ))
+      </article>
+    )
+  )
 }
